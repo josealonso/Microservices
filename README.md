@@ -37,8 +37,12 @@ Dependencises: Lombok, Spring Web, Spring Data MongoDB.
 
 - Install the Spring initializer command line
 
-``
+```
 sudo ln -s /usr/lib/jvm/java-17-openjdk-amd64/ /usr/lib/jvm/default-java
+
 sdk install springboot
-spring --version
+```
+
+`spring --version`
+
 > Spring CLI v3.0.0
