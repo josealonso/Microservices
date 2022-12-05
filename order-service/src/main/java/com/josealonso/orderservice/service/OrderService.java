@@ -23,7 +23,7 @@ public class OrderService {
 
     public static final String API_INVENTORY_URL = "http://inventory-service/api/inventory";
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -40,7 +40,7 @@ public class OrderService {
                 .toList();
 
         // Call Inventory Service and place order if product is in stock
-        var inventoryResponseArray = webClient.get()
+        var inventoryResponseArray = webClientBuilder.build().get()
                 .uri(API_INVENTORY_URL,
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodesList).build())
                 .retrieve()
