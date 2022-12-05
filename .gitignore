@@ -2,3 +2,4 @@ product-service/target/
 inventory-service/target/
 order-service/target/
 .idea/
+target/
