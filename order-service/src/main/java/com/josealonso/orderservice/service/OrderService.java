@@ -21,7 +21,7 @@ import java.util.UUID;
 @Transactional
 public class OrderService {
 
-    public static final String API_INVENTORY = "http://localhost:8082/api/inventory";
+    public static final String API_INVENTORY_URL = "http://inventory-service/api/inventory";
     private final OrderRepository orderRepository;
     private final WebClient webClient;
 
@@ -41,7 +41,7 @@ public class OrderService {
 
         // Call Inventory Service and place order if product is in stock
         var inventoryResponseArray = webClient.get()
-                .uri(API_INVENTORY,
+                .uri(API_INVENTORY_URL,
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodesList).build())
                 .retrieve()
                 .bodyToMono(InventoryResponse[].class)
