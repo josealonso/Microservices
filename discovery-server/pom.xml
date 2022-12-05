@@ -12,9 +12,8 @@
     <artifactId>discovery-server</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
+        <java.version>17</java.version>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -22,5 +21,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-properties-migrator</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+-->
     </dependencies>
 </project>

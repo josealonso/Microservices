@@ -26,8 +26,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-cloud-version>2021.0.2</spring-cloud-version>
+        <spring-cloud-version>2022.0.0-RC2</spring-cloud-version>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +45,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-properties-migrator</artifactId>
+                <scope>runtime</scope>
+            </dependency>
+-->
         </dependencies>
     </dependencyManagement>
 
@@ -73,4 +79,24 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>netflix-candidates</id>
+            <name>Netflix Candidates</name>
+            <url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>
