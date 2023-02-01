@@ -1,3 +1,63 @@
+### MONOLITH
+
+- All components are part of a single unit.
+- Everything is developed, deployed and scaled as one unit.
+- The application must be written in one tech stack.
+- Teams need to be careful to not affect each other's work.
+
+**DISADVANTAGES**
+
+- Parts/components are tightly coupled.
+- High infraestructure costs, since only the entire application can be scaled.
+- It is difficult to use different **dependency versions**.
+- **Release process takes longer**.
+
+### MICROSERVICES
+
+The application is broken down into multiple smaller independent applications.
+Each component/application is
+- Loosely coupled.
+- Developed independently.
+- Deployed independently.
+- Scaled independently.
+
+#### Communicate microservices
+
+**1.- SYNCHRONOUS Communication**
+
+The protocol HTTP/HTTPS is synchronous and the client code can only continue 
+its task when an HTTP server response is received.
+Examples: RestTemplate, WebClient and Spring Cloud Open Feign library.
+
+**2.- ASYNCHRONOUS Communication**
+
+The client sends a request and does not wait for a response.
+A message broker is used between the two microservices.
+Examples: RabbitMQ or Apache Kafka.
+
+### Architecture with Spring Cloud
+
+API Gateway ----> handle the client request to the appropriate microservice.
+
+Config Server --> externalize the configuration of the multiple microservices.
+
+Service Registry and Registry Discovery ---->
+keeps a list with the running instances of the microservices 
+
+Distributed Tracing ---->
+
+Circuit Breaker
+
+
+**Spring Cloud** provides models for implementing these patterns.
+
+- Spring Cloud Netflix Eureka Server for Service Registry.
+- Spring Cloud Config Server for Config Server.
+- Spring Cloud Gateway for API Gateway.
+- Resilience4j for Circuit Breaker.
+- Spring Cloud Sleuth for distributed tracing.
+- Zipkin provides a UI for Spring Cloud Sleuth.
+
 
 ### SERVICES
 
